@@ -222,6 +222,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeElapsed: 0
+--- !u!1 &6596912677922143528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9083947105382075050}
+  - component: {fileID: 5369822015431638121}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9083947105382075050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6596912677922143528}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2764, y: 0.138, z: 1.6956419}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4857136260537763573}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &5369822015431638121
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6596912677922143528}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.5225167, y: 7.241086}
+      - {x: -4.4733424, y: 7.242325}
+      - {x: -4.4670997, y: -0.75710094}
+      - {x: -2.4733598, y: -0.7573552}
+      - {x: -2.474495, y: 5.243764}
+      - {x: 3.528571, y: 5.2491226}
 --- !u!1 &7542091262374815109
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4857136260537763573}
   - component: {fileID: 3036543935223433034}
+  - component: {fileID: 7649872371287159916}
   m_Layer: 10
   m_Name: ULD
   m_TagString: Untagged
@@ -359,12 +423,13 @@ Transform:
   m_GameObject: {fileID: 8070515373941482580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.9893026, y: -4.277851, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2936146563054108084}
   - {fileID: 2937237451746215275}
   - {fileID: 7663504587728471481}
+  - {fileID: 9083947105382075050}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -420,3 +485,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &7649872371287159916
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070515373941482580}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.10203443, y: 0.5006894}
+      - {x: 0.10068179, y: 0.40023518}
+      - {x: 0.3995502, y: 0.3998598}
+      - {x: 0.399132, y: -0.39994344}
+      - {x: 0.100198016, y: -0.4002296}
+      - {x: 0.1002183, y: -0.49956542}
+      - {x: 0.49998417, y: -0.4999989}
+      - {x: 0.5, y: 0.5}
+    - - {x: -0.4988904, y: -0.10052113}
+      - {x: -0.40081844, y: -0.10002072}
+      - {x: -0.40005124, y: -0.39990312}
+      - {x: -0.10034175, y: -0.3998787}
+      - {x: -0.10031716, y: -0.4989774}
+      - {x: -0.5026826, y: -0.49858594}

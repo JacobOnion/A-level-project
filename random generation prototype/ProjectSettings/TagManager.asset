@@ -8,6 +8,7 @@ TagManager:
   - destroyer
   - player
   - gun
+  - enemy
   layers:
   - Default
   - TransparentFX

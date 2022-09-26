@@ -21,9 +21,9 @@ public class RotateGun : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         Vector2 direction = mousePos - rb.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
-        rb.position = Vector2.ClampMagnitude(direction, 0.1f);
     }
 }

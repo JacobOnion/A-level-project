@@ -232,6 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2666559765706252066}
   - component: {fileID: 6932862340737070349}
+  - component: {fileID: 4538296341083187340}
   m_Layer: 10
   m_Name: UD
   m_TagString: Untagged
@@ -248,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 8845536598484258356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.5447955, y: -2.465406, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7925530524253838378}
@@ -308,3 +309,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &4538296341083187340
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8845536598484258356}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.10018375, y: 0.49989313}
+      - {x: 0.100840844, y: 0.39998317}
+      - {x: 0.4004864, y: 0.40021202}
+      - {x: 0.4010591, y: -0.4011391}
+      - {x: 0.10025605, y: -0.4003271}
+      - {x: 0.1001381, y: -0.49868506}
+      - {x: 0.5000652, y: -0.49997672}
+      - {x: 0.5, y: 0.5}
+    - - {x: -0.5000475, y: 0.5002652}
+      - {x: -0.100038834, y: 0.5000056}
+      - {x: -0.10002837, y: 0.40004253}
+      - {x: -0.4001772, y: 0.40017727}
+      - {x: -0.39868838, y: -0.40029797}
+      - {x: -0.10066353, y: -0.4019665}
+      - {x: -0.100773394, y: -0.49861428}
+      - {x: -0.49929357, y: -0.49903128}

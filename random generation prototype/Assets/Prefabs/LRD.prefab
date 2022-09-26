@@ -333,6 +333,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeElapsed: 0
+--- !u!1 &4989676675473146245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8554687971361775235}
+  - component: {fileID: 1440109315609382169}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8554687971361775235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989676675473146245}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.202, y: -0.2217, z: 1.6956419}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4744996948863400753}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1440109315609382169
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989676675473146245}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.967283, y: 2.4108999}
+      - {x: 3.9763784, y: -3.583133}
+      - {x: -2.0274842, y: -3.5902538}
+      - {x: -2.0441346, y: -5.569228}
+      - {x: 5.9587455, y: -5.565132}
+      - {x: 5.9599056, y: 2.4076967}
 --- !u!1 &6686899215401713987
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4744996948863400753}
   - component: {fileID: 341877816329879645}
+  - component: {fileID: 1957503175682440819}
   m_Layer: 10
   m_Name: LRD
   m_TagString: Untagged
@@ -359,12 +423,13 @@ Transform:
   m_GameObject: {fileID: 6686899215401713987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.414282, y: -4.2108293, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4893753892479550516}
   - {fileID: 2613924851663286613}
   - {fileID: 6164880461988312703}
+  - {fileID: 8554687971361775235}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -420,3 +485,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &1957503175682440819
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686899215401713987}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.5, y: 0.5}
+      - {x: -0.4993704, y: 0.10050121}
+      - {x: -0.40013233, y: 0.100949466}
+      - {x: -0.4001322, y: 0.3995605}
+      - {x: 0.3995579, y: 0.39977267}
+      - {x: 0.40065476, y: 0.10103989}
+      - {x: 0.49959746, y: 0.10110782}
+      - {x: 0.49930924, y: 0.4995291}
+    - - {x: -0.40025565, y: -0.10093366}
+      - {x: -0.50011975, y: -0.100073956}
+      - {x: -0.5000664, y: -0.49985284}
+      - {x: -0.10018383, y: -0.49989724}
+      - {x: -0.09993697, y: -0.39997962}
+      - {x: -0.39997634, y: -0.3999591}
