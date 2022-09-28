@@ -7,6 +7,7 @@ public class ShootBullet : MonoBehaviour
     public GameObject bullet;
     private Transform pos;
     public float bulletPower;
+    public float bulletDmg;
     
     void Awake()
     {

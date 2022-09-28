@@ -37,7 +37,8 @@ public class TurretEnemy : Enemy
         {
             Debug.Log("shoot");
             GameObject currentBullet = Instantiate(enemyBullet, guns[i].transform.position, guns[i].transform.rotation);
-            currentBullet.GetComponent<Rigidbody2D>().AddForce(-(guns[i].transform.up) * enemyBulletForce, ForceMode2D.Force);
+            currentBullet.GetComponent<Rigidbody2D>().AddForce((guns[i].transform.up) * enemyBulletForce, ForceMode2D.Force);
         }
     }
+
 }

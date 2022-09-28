@@ -18,4 +18,9 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void damage(float weaponDmg)
+    {
+        health -= weaponDmg;
+    }
 }
