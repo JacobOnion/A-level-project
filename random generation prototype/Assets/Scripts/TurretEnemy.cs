@@ -8,8 +8,8 @@ public class TurretEnemy : Enemy
     public GameObject[] guns;
     public float enemyBulletForce;
     public float fireRate;
-    private float coolDown;
-    public TurretEnemy(float newHealth, float newEnemyBulletForce, float newFireRate) : base(newHealth)
+    protected float coolDown;
+    public TurretEnemy(float newHealth, float newEnemyDamage, float newEnemyBulletForce, float newFireRate) : base(newHealth, newEnemyDamage)
     {
         enemyBulletForce = newEnemyBulletForce;
         fireRate = newFireRate;
@@ -23,7 +23,12 @@ public class TurretEnemy : Enemy
     void Update()
     {
         Die();
-         coolDown-= Time.deltaTime;
+        CoolDownTimer();
+    }
+
+    protected void CoolDownTimer()
+    {
+        coolDown -= Time.deltaTime;
         if (coolDown <= 0f)
         {
             coolDown = fireRate;
@@ -37,6 +42,7 @@ public class TurretEnemy : Enemy
         {
             Debug.Log("shoot");
             GameObject currentBullet = Instantiate(enemyBullet, guns[i].transform.position, guns[i].transform.rotation);
+            currentBullet.GetComponent<EnemyDestroyBullet>().damage = enemyDamage;
             currentBullet.GetComponent<Rigidbody2D>().AddForce((guns[i].transform.up) * enemyBulletForce, ForceMode2D.Force);
         }
     }

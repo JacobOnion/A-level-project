@@ -35,7 +35,7 @@ public class RoomOrganiser : MonoBehaviour
                 threeDoor = i;
             }
         }
-        Invoke("cleaner", 5f); //Waits five seconds before running to allow the level to finish generating.
+        Invoke("cleaner", 3f); //Waits five seconds before running to allow the level to finish generating.
     }
 
     //Destroys all spawnpoints in the scene, and closes off any open doors with walls.
@@ -47,7 +47,6 @@ public class RoomOrganiser : MonoBehaviour
             if(spawnList[i].GetComponent<spawn>().spawned == false)
             {
             Instantiate(wall, spawnList[i].transform.position, Quaternion.identity);
-                Debug.Log(spawnList[i].transform.position);
             }
             Destroy(spawnList[i]);
         }

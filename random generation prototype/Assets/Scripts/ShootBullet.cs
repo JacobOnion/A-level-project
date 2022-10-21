@@ -8,17 +8,23 @@ public class ShootBullet : MonoBehaviour
     private Transform pos;
     public float bulletPower;
     public float bulletDmg;
+    public float fireRate;
+    private float coolDown;
     
     void Awake()
     {
         pos = gameObject.GetComponent<Transform>();
+        coolDown = fireRate;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        coolDown -= Time.deltaTime;
+        if (Input.GetButton("Fire1") && coolDown <= 0)
         {
+            coolDown = fireRate;
             Shoot();
         }
     }
@@ -30,3 +36,5 @@ public class ShootBullet : MonoBehaviour
     }
 
 }
+
+

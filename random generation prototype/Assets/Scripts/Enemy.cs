@@ -5,10 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health;
+    public float enemyDamage;
 
-    public Enemy(float newHealth)
+    public Enemy(float newHealth, float newEnemyDamage)
     {
         health = newHealth;
+        enemyDamage = newEnemyDamage;
     }
 
     protected void Die()

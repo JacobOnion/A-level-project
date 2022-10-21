@@ -16,8 +16,10 @@ public class PlayerController2 : MonoBehaviour
 
     private void Update()
     {
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
+        //input.x = Input.GetAxisRaw("Horizontal");
+        //input.y = Input.GetAxisRaw("Vertical");
+
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
     }
 
     void FixedUpdate()
@@ -27,28 +29,7 @@ public class PlayerController2 : MonoBehaviour
 
     private void Run()
     {
-        if (input.x == 1 && input.y == 1)
-        {
-            input.x = 0.707f;
-            input.y = 0.707f;
-        }
-        else if (input.x == -1 && input.y == -1)
-        {
-            input.x = -0.707f;
-            input.y = -0.707f;
-        }
-        else if (input.x == 1 && input.y == -1)
-        {
-            input.x = 0.707f;
-            input.y = -0.707f;
-        }
-        else if (input.x == -1 && input.y == 1)
-        {
-            input.x = -0.707f;
-            input.y = 0.707f;
-        }
-        //float target = Mathf.Sqrt(Mathf.Pow(input.x, 2f) + Mathf.Pow(input.y, 2f)) * movespeed;
-        Vector2 targetSpeed = input * maxSpeed;;
+        Vector2 targetSpeed = input * maxSpeed;
 
         float acceleration;
         if (Mathf.Abs(targetSpeed.x) > 0.1f || Mathf.Abs(targetSpeed.y) > 0.1f)

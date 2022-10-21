@@ -8,6 +8,7 @@ public class spawn : MonoBehaviour
     public bool spawned;
     private Transform loc;
     private RoomOrganiser RoomOrganiser;
+    private LayoutManager LayoutManager;
     public int ranNum;
     public int doors;
     private GameObject newSpawn;
@@ -19,11 +20,12 @@ public class spawn : MonoBehaviour
         loc = gameObject.GetComponent<Transform>();
         Timer = gameObject.GetComponent<Timer>();
         RoomOrganiser = GameObject.Find("Room Manager").GetComponent<RoomOrganiser>();
+        LayoutManager = GameObject.Find("Room Manager").GetComponent<LayoutManager>();
 
-        Invoke("Spawner", 0.4f); //calls the function after 0.4 seconds to give time to destroy the spawnpoint before it runs if necessary.
+        Invoke("RoomSpawner", 0.2f); //calls the function after 0.2 seconds to give time to destroy the spawnpoint before it runs if necessary.
         
     }
-    void Spawner()
+    void RoomSpawner()
     {
         if ((spawned == false) && RoomOrganiser.roomsNum < 10) //Checks that a room hasn't been spawned yet, and the room limit hasn't been reached.
         {
@@ -47,7 +49,7 @@ public class spawn : MonoBehaviour
             {
                 room = RoomOrganiser.downRooms[ranNum];
             }
-            else if (loc.localPosition.x == 1)
+            else if (loc.localPosition.x > 1.5f)
             {
                 room = RoomOrganiser.leftRooms[ranNum];
             }
@@ -55,14 +57,21 @@ public class spawn : MonoBehaviour
             {
                 room = RoomOrganiser.upRooms[ranNum];
             }
-            else if (loc.localPosition.x == -1)
+            else if (loc.localPosition.x < -1.5f)
             {
                 room = RoomOrganiser.rightRooms[ranNum];
             }
             Instantiate(room, transform.position, Quaternion.identity);
             RoomOrganiser.roomsNum += 1;
             spawned = true;
+            LayoutSpawner();
         }
+    }
+
+    private void LayoutSpawner()
+    {
+        Instantiate(LayoutManager.layouts[Random.Range(0, LayoutManager.layouts.Length)], transform.position, Quaternion.identity);
+        Debug.Log("bru");
     }
 
     // if two spawnpoints collide,
@@ -83,7 +92,6 @@ public class spawn : MonoBehaviour
             if ((newSpawn.GetComponent<spawn>().spawned == false) && (spawned == false)) //this will only run true if the two spawnpoints were created on top of each other at the same time
             {
                 Instantiate(RoomOrganiser.wall, transform.position, Quaternion.identity);
-                Debug.Log("WOAH");
                 spawned = true;
             }
             else
@@ -91,7 +99,6 @@ public class spawn : MonoBehaviour
                 // destroys the newer spawnpoint to prevent rooms overalapping
                 if (Timer.timeElapsed < newSpawn.GetComponent<Timer>().timeElapsed)
                 {
-                    Debug.Log("overlap gone");
                     Destroy(gameObject);
                 }
             }

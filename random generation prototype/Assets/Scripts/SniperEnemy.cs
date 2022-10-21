@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class SniperEnemy
 {
-    GameObject enemy1;
-    TurretEnemy shooter;
-
+    // Start is called before the first frame update
     void Start()
     {
-        shooter = new TurretEnemy(20f, 5f, 2f);
+        
     }
 
     // Update is called once per frame

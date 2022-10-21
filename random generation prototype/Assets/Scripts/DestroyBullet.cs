@@ -15,7 +15,7 @@ public class DestroyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("melee enemy"))
         {
             other.gameObject.GetComponent<Enemy>().damage(shootBullet.bulletDmg);
         }

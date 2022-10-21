@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDestroyBullet : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float damage;
     void Start()
     {
         Invoke("BulletTimer", 4f);
@@ -13,13 +13,13 @@ public class EnemyDestroyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("enemy"))
-        {
-        }
-        else
-        {
+        //if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("enemy bullet") || other.gameObject.CompareTag("melee enemy"))
+        //{
+        //}
+        //else
+        //{
             Destroy(gameObject);
-        }
+        //}
 
     }
 
