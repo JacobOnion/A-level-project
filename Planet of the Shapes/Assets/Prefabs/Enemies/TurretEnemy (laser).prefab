@@ -1289,7 +1289,7 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_MaxForce: 40
+  m_MaxForce: 65
   m_MaxTorque: 40
 --- !u!114 &118243962512608730
 MonoBehaviour:
@@ -1314,6 +1314,7 @@ MonoBehaviour:
   - {fileID: 118243962030152908}
   fireRate: 4
   volume: {fileID: 2920703566771590264, guid: f9e4cbd7af45b6e48a6e092c2352e068, type: 3}
+  maxDistance: 10
 --- !u!114 &118243962512608724
 MonoBehaviour:
   m_ObjectHideFlags: 0
