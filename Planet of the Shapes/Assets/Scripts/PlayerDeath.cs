@@ -7,6 +7,7 @@ public class PlayerDeath : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float health;
+    public float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,19 +18,29 @@ public class PlayerDeath : MonoBehaviour
     {
         if (health <= 0)
         {
-            SceneManager.LoadScene("LevelGeneration");
+            Time.timeScale = 0;
+            timer -= Time.unscaledDeltaTime;
+            if (timer <= 0f)
+            {
+                SceneManager.LoadScene("Main Menu");
+            }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("enemy bullet"))
+        DamagePlayer(other.gameObject);
+    }
+
+    public void DamagePlayer(GameObject other)
+    {
+        if (other.CompareTag("enemy bullet"))
         {
-            health -= other.gameObject.GetComponent<EnemyDestroyBullet>().damage;
+            health -= other.GetComponent<EnemyDestroyBullet>().damage;
         }
-        else if (other.gameObject.CompareTag("melee enemy"))
+        else if (other.CompareTag("melee enemy") || other.CompareTag("laser enemy"))
         {
-            health -= other.gameObject.GetComponent<ChasingEnemy>().enemyDamage;
+            health -= other.GetComponent<Enemy>().enemyDamage;
         }
     }
 }

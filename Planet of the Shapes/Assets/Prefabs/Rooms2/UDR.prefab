@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8276795179211523372}
   - component: {fileID: 1099322983445506577}
   - component: {fileID: 5430411574472861228}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (1)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 8769050234705436720}
   - component: {fileID: 6862414642927123143}
   - component: {fileID: 2539705707759993173}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (3)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9137638669274694865}
   - component: {fileID: 2605281379911992951}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 5089991494143285903}
   - component: {fileID: 5476574912442766585}
   - component: {fileID: 4452504895344304968}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hdoor
   m_TagString: door
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 5786838457877958263}
   - component: {fileID: 7537569556246289614}
   - component: {fileID: 8819706364524678200}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (2)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 6830856367443929848}
   - component: {fileID: 2277310649925949829}
   - component: {fileID: 5936860155337749573}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UDR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 5643829075998574900}
   - component: {fileID: 4609615959830690605}
   - component: {fileID: 3883010888809817461}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vdoor
   m_TagString: door
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 6868330511285396387}
   - component: {fileID: 4168515196906972215}
   - component: {fileID: 3946092887163982418}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy Spawn Area
   m_TagString: enemy spawn area
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 6567884914260608660}
   - component: {fileID: 6919208180348382445}
   - component: {fileID: 4715369284130203645}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vdoor (1)
   m_TagString: door
   m_Icon: {fileID: 0}

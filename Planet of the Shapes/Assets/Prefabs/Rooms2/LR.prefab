@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3591044589892466088}
   - component: {fileID: 853150491994430324}
   - component: {fileID: 3543391000949397871}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy Spawn Area
   m_TagString: enemy spawn area
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 6609114461245553315}
   - component: {fileID: 7715512544827797508}
   - component: {fileID: 8607192129370356428}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hdoor (1)
   m_TagString: door
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 629021878163169417}
   - component: {fileID: 1475536034101797610}
   - component: {fileID: 5830566658516434631}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hdoor
   m_TagString: door
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 2808054269138831064}
   - component: {fileID: 5213055926261285985}
   - component: {fileID: 5773684113503084294}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 5479438454832253381}
   - component: {fileID: 5606311331014725811}
   - component: {fileID: 2517895583234364235}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (2)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 6964272997248734710}
   - component: {fileID: 7412895950921509298}
   - component: {fileID: 5144983329066286763}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (3)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}

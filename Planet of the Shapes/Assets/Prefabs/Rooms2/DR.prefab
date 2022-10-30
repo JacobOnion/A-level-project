@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 6237387682322424488}
   - component: {fileID: 3282178493496569378}
   - component: {fileID: 1285313287792924112}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,9 +141,9 @@ Transform:
   m_LocalScale: {x: 19.75758, y: 20.00003, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7126428640273762841}
   - {fileID: 542941050689753597}
   - {fileID: 1679690279410348100}
+  - {fileID: 7126428640273762841}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 2113623422540528611}
   - component: {fileID: 5888074889470915456}
   - component: {fileID: 5829154378650734297}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (3)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -274,7 +274,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6237387682322424488}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8293780943358734348
 MonoBehaviour:
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 7145529861771326909}
   - component: {fileID: 8618510785096311246}
   - component: {fileID: 6754431828690429793}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (1)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -496,7 +496,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6237387682322424488}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &166759875125368101
 MonoBehaviour:
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 7126428640273762841}
   - component: {fileID: 8689207733212555508}
   - component: {fileID: 1029948571319746518}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy Spawn Area
   m_TagString: enemy spawn area
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ Transform:
   - {fileID: 4212566138822071170}
   - {fileID: 4338854340898293058}
   m_Father: {fileID: 6237387682322424488}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8689207733212555508
 BoxCollider2D:

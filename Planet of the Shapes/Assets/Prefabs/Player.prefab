@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3150273990571835359}
   m_Layer: 0
   m_Name: Gun
-  m_TagString: gun
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,9 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39af36e0627748f41a4dcf6edb2d9990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
   offset: 0.8
-  player: {fileID: 5878254204205663973}
 --- !u!1 &5878254204121392411
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +111,7 @@ GameObject:
   - component: {fileID: 5878254204121392389}
   m_Layer: 0
   m_Name: Fire Point
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 6806152442147481832, guid: 1c08791527e6d7c4687b4ec8104b8482, type: 3}
   bulletPower: 20
+  bulletDmg: 10
+  fireRate: 0.5
 --- !u!1 &5878254204205663995
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,9 +158,9 @@ GameObject:
   - component: {fileID: 5878254204205663973}
   - component: {fileID: 5878254204205663972}
   - component: {fileID: 5878254204205663975}
-  - component: {fileID: 5878254204205663969}
   - component: {fileID: 5878254204205663970}
   - component: {fileID: 3150273988881540582}
+  - component: {fileID: 1585758392}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -257,24 +257,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!256 &5878254204205663969
-FrictionJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5878254204205663995}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: 0
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_MaxForce: 0
-  m_MaxTorque: 1
 --- !u!114 &5878254204205663970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,9 +270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {x: 0, y: 0}
-  maxSpeed: 10
-  accelRate: 20
-  deccelRate: 10
+  maxSpeed: 7.5
+  accelRate: 15
+  deccelRate: 7.5
 --- !u!58 &3150273988881540582
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -307,3 +289,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1585758392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878254204205663995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a09f15181b4eab4193b00c3e2aec266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6775776974448394687}
   - component: {fileID: 210168733077070370}
   - component: {fileID: 8704536325695899252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WALL3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 3605456803583196320}
   - component: {fileID: 5200300807515779379}
   - component: {fileID: 5686717622366523533}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}

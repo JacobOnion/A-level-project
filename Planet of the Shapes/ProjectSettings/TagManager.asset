@@ -14,6 +14,7 @@ TagManager:
   - door
   - enemy spawner
   - enemy spawn area
+  - laser enemy
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Enemy Bullets
   - 
   - Rooms
-  - 
+  - spawns
   - 
   - 
   - 

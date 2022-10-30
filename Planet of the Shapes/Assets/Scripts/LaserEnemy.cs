@@ -11,6 +11,7 @@ public class LaserEnemy : TurretEnemy
     public Volume volume;
     private Volume laserEffect;
     public float maxDistance;
+    private PlayerDeath playerDeath;
 
     public LaserEnemy(float newHealth, float newEnemyDamage, float newFireRate, GameObject[] newGuns) : base(newHealth, newEnemyDamage, newFireRate, newGuns)
     {
@@ -18,9 +19,11 @@ public class LaserEnemy : TurretEnemy
 
     private void Awake()
     {
+        playerDeath = GameObject.FindGameObjectWithTag("player").GetComponent<PlayerDeath>();
         laserEffect = Instantiate(volume);
         lineRenderers = new List<LineRenderer>();
         volume.enabled = false;
+        coolDown = 1.8f;
     }
     // Start is called before the first frame update
     void Start()
@@ -43,26 +46,33 @@ public class LaserEnemy : TurretEnemy
     private void FixedUpdate()
     {
         CoolDownTimer("EnableLaser");
+        if (laserEffect.enabled)
+        {
+            for (int i = 0; i < guns.Length; i++)
+            {
+                lineRenderers[i].enabled = true;
+                if (Physics2D.Raycast(guns[i].transform.position, guns[i].transform.up))
+                {
+                    RaycastHit2D hit = Physics2D.Raycast(guns[i].transform.position, guns[i].transform.up, Mathf.Infinity, ~LayerMask.GetMask("spawns"));
+                    DrawRay(guns[i].transform.position, hit.point, i);
+                    if (hit.transform.gameObject.CompareTag("player"))
+                    {
+                        playerDeath.DamagePlayer(gameObject);
+                    }
+                    //Debug.Log(hit.collider, hit.collider.gameObject);
+                }
+                else
+                {
+                    DrawRay(guns[i].transform.position, guns[i].transform.up * maxDistance, i);
+                }
+            }
+        }
     }
 
     protected void EnableLaser()
     {
         laserEffect.enabled = true;
-        for(int i = 0; i < guns.Length; i++)
-        {
-            lineRenderers[i].enabled = true;
-            if (Physics2D.Raycast(guns[i].transform.position, guns[i].transform.up))
-            {
-                RaycastHit2D hit = Physics2D.Raycast((Vector2)guns[i].transform.position, /*Quaternion.Euler(guns[i].transform.rotation.z, guns[i].transform.rotation.x, guns[i].transform.rotation.y).normalized * */guns[i].transform.up, Mathf.Infinity);
-                DrawRay(guns[i].transform.position, hit.point, i);
-            }
-            else
-            {
-                DrawRay(guns[i].transform.position, guns[i].transform.up * maxDistance, i);
-            }
-            //Debug.Log(hit.point, guns[i]);
-        }
-        Invoke("DisableLaser", 1.5f);
+        Invoke("DisableLaser", 2.2f);
     }
 
     protected void DrawRay(Vector2 startPos, Vector2 endPos, int num)

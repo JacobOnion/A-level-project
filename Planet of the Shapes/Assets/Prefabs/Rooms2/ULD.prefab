@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6646430602681707760}
   - component: {fileID: 4627606106573055667}
   - component: {fileID: 7267261187361032332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ULD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 548264907613577496}
   - component: {fileID: 6881731750571993942}
   - component: {fileID: 3007316818555195640}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (4)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 3472789644133453565}
   - component: {fileID: 2531083781325480289}
   - component: {fileID: 5528524163812958499}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vdoor (1)
   m_TagString: door
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 7875236353859710023}
   - component: {fileID: 4345485419883668060}
   - component: {fileID: 8257158488609584420}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (5)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 7138348987375380970}
   - component: {fileID: 7532178877748977121}
   - component: {fileID: 6885639081223949921}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hdoor (1)
   m_TagString: door
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 2074157546075738871}
   - component: {fileID: 5497995307758178442}
   - component: {fileID: 1493375056918146361}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnPoint (3)
   m_TagString: spawn
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 8523915714748545468}
   - component: {fileID: 2355441492137257576}
   - component: {fileID: 1921575514743827791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy Spawn Area
   m_TagString: enemy spawn area
   m_Icon: {fileID: 0}
@@ -769,7 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2018232084866789394}
   - component: {fileID: 3411958254049051018}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 1477912577233950943}
   - component: {fileID: 7031580035202640602}
   - component: {fileID: 9166218685932983821}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vdoor
   m_TagString: door
   m_Icon: {fileID: 0}

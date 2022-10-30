@@ -47,7 +47,6 @@ MonoBehaviour:
   waves:
   - {fileID: 7051366499320703853, guid: 818143cb181685942adf33f137a501c6, type: 3}
   doorSpawn: {fileID: 0}
-  roomID: {fileID: 0}
   currentWave: {fileID: 15146268012204107, guid: 93f41c2278e1668479c3ab8d6be0b15f, type: 3}
 --- !u!1 &1522144358501724452
 GameObject:
@@ -60,7 +59,7 @@ GameObject:
   - component: {fileID: 60382308955157011}
   - component: {fileID: 3745843943619046258}
   - component: {fileID: 233162443735157423}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
