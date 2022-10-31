@@ -22,6 +22,7 @@ public class PlayerDeath : MonoBehaviour
             timer -= Time.unscaledDeltaTime;
             if (timer <= 0f)
             {
+                Time.timeScale = 1;
                 SceneManager.LoadScene("Main Menu");
             }
         }
