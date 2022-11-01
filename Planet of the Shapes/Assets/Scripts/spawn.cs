@@ -66,7 +66,7 @@ public class spawn : MonoBehaviour
             }
             currentRoom = Instantiate(room, transform.position, Quaternion.identity);
             RoomOrganiser.roomsNum += 1;
-            if (RoomOrganiser.roomsNum == RoomOrganiser.maxRooms)
+            if (RoomOrganiser.roomsNum == RoomOrganiser.maxRooms) //runs true if this is the final room generated
             {
                 Debug.Log("done", currentRoom);
                 Instantiate(victory, transform.position, Quaternion.identity);
@@ -81,7 +81,7 @@ public class spawn : MonoBehaviour
         GameObject newLayout = Instantiate(LayoutManager.layouts[Random.Range(0, LayoutManager.layouts.Length)], transform.position, Quaternion.identity);
         GameObject currentEnemySpawner = newLayout.transform.Find("Enemy Spawner").gameObject;
         currentEnemySpawner.GetComponent<EnemySpawner>().doorSpawn = currentRoom.transform.Find("Enemy Spawn Area").gameObject.GetComponent<DoorSpawn>();//used to find the room the layout is in.
-        RoomOrganiser.enemySpawnerList.Add(currentEnemySpawner);
+        //RoomOrganiser.enemySpawnerList.Add(currentEnemySpawner);
     }
 
     // if two spawnpoints collide,
@@ -89,7 +89,7 @@ public class spawn : MonoBehaviour
     {
         if (other.CompareTag("spawn") && gameObject.CompareTag("spawn")) //we only want the function to run if the two gameobjects are both spawnpoints
         {
-            newSpawn = other.gameObject; //other cannot be referenced outside of this module
+            newSpawn = other.gameObject;
             Invoke("blockCheck", 0.1f); // called after 0.1 seconds to allow other scripts to run before the rest of the code is excecuted
             
         }

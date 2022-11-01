@@ -7,12 +7,11 @@ public class DoorSpawn : MonoBehaviour
 {
     private List<GameObject> doors = new List<GameObject>();
     private bool roomEntered;
-    public bool RoomEntered
+    public bool RoomEntered //Declared as a property so it can only be editted inside this class
     {
         get { return roomEntered; }
         private set { roomEntered = value; }
     }
-    public bool test;
 
     void Start()
     {

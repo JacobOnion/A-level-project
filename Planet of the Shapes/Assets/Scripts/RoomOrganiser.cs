@@ -17,7 +17,7 @@ public class RoomOrganiser : MonoBehaviour
     public int threeDoor;
     public int roomsNum;
     public int maxRooms;
-    public bool genFinished = false;
+    public bool genFinished;
 
     // Start is called before the first frame update
     void Start()
@@ -39,19 +39,21 @@ public class RoomOrganiser : MonoBehaviour
                 threeDoor = i;
             }
         }
-        Invoke("cleaner", 3f); //Waits five seconds before running to allow the level to finish generating.
+        Invoke("cleaner", 3f); //Waits three seconds before running to allow the level to finish generating.
     }
 
-    //Destroys all spawnpoints in the scene, and closes off any open doors with walls.
+
     void cleaner()
     {
         Debug.Log(roomsNum);
-        if (roomsNum < maxRooms)
+        if (roomsNum < maxRooms) //remakes the level if certain parameters aren't met
         {
-            SceneManager.LoadScene("LevelGeneration");
+            SceneManager.LoadScene("Gameplay");
         }
+
         GameObject[] spawnList = GameObject.FindGameObjectsWithTag("spawn");
-        for (int i = 0; i < spawnList.Length; i++)
+
+        for (int i = 0; i < spawnList.Length; i++)  //Destroys all spawnpoints in the scene, and closes off any open doors with walls.
         {
             if(spawnList[i].GetComponent<spawn>().spawned == false)
             {
@@ -63,10 +65,10 @@ public class RoomOrganiser : MonoBehaviour
         genFinished = true;
 
 
-        foreach (GameObject spawner in enemySpawnerList)
+        /*foreach (GameObject spawner in enemySpawnerList)
         {
             spawner.SetActive(true); //re-activates all spawners after the spawnpoints have been deleted
-        }
+        }*/
         spawnList = null;
         enemySpawnerList = null;
     }

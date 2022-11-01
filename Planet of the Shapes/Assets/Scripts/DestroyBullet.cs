@@ -5,11 +5,11 @@ using UnityEngine;
 public class DestroyBullet : MonoBehaviour
 {
     public ShootBullet shootBullet;
-    // Start is called before the first frame update
+
     void Start()
     {
         shootBullet = GameObject.FindGameObjectWithTag("gun").GetComponent<ShootBullet>();
-        Invoke("BulletTimer", 4f);
+        Invoke("BulletTimer", 4f); //Destroys the bullet if it doesn't hit a collider after 4 seconds to save memory
     }
 
 
@@ -17,9 +17,9 @@ public class DestroyBullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("melee enemy") || other.gameObject.CompareTag("laser enemy"))
         {
-            other.gameObject.GetComponent<Enemy>().damage(shootBullet.bulletDmg);
+            other.gameObject.GetComponent<Enemy>().damage(shootBullet.bulletDmg); //subtracts bulletDmg from the enemy's health
         }
-        Destroy(gameObject);
+        Destroy(gameObject); //Bullet is destroyed on collision
     }
 
     void BulletTimer()
