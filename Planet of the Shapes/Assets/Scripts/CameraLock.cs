@@ -10,17 +10,12 @@ public class CameraLock : MonoBehaviour
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("player"))
+        if (other.gameObject.CompareTag("player")) //runs true when the player enters the room this script is attached to
         {
-            mainCamera.transform.position = new Vector3(transform.position.x, transform.position.y, -10f);
+            mainCamera.transform.position = new Vector3(transform.position.x, transform.position.y, -10f); //locks the camera to the room
         }
     }
 }

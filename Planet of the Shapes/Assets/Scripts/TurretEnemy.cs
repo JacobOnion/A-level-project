@@ -24,25 +24,14 @@ public class TurretEnemy : Enemy
 
     }
 
-    protected void CoolDownTimer(string shoot)
+    protected void CoolDownTimer(string shoot) //adds a delay in between shots eqal to fireRate
     {
         coolDown -= Time.deltaTime;
         if (coolDown <= 0f)
         {
             coolDown = fireRate;
-            Invoke(shoot, 0f);
+            Invoke(shoot, 0f); //calls the procedure with the identifier of the string passed in as a parameter
         }
     }
-
-    /*protected void shoot()
-    {
-        for (int i = 0; i < guns.Length; i++)
-        {
-            Debug.Log("shoot");
-            GameObject currentBullet = Instantiate(enemyBullet, guns[i].transform.position, guns[i].transform.rotation);
-            currentBullet.GetComponent<EnemyDestroyBullet>().damage = enemyDamage;
-            currentBullet.GetComponent<Rigidbody2D>().AddForce((guns[i].transform.up) * enemyBulletForce, ForceMode2D.Force);
-        }
-    }*/
 
 }

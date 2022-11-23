@@ -72,13 +72,13 @@ public class spawn : MonoBehaviour
                 Instantiate(victory, transform.position, Quaternion.identity);
             }
             spawned = true;
-            LayoutSpawner();
+            //LayoutSpawner();
         }
     }
 
     private void LayoutSpawner()
     {
-        GameObject newLayout = Instantiate(LayoutManager.layouts[Random.Range(0, LayoutManager.layouts.Length)], transform.position, Quaternion.identity);
+        GameObject newLayout = Instantiate(LayoutManager.layouts[Random.Range(0, LayoutManager.layouts.Length)], transform.position, Quaternion.identity); //spawns a random layout from the array
         GameObject currentEnemySpawner = newLayout.transform.Find("Enemy Spawner").gameObject;
         currentEnemySpawner.GetComponent<EnemySpawner>().doorSpawn = currentRoom.transform.Find("Enemy Spawn Area").gameObject.GetComponent<DoorSpawn>();//used to find the room the layout is in.
         //RoomOrganiser.enemySpawnerList.Add(currentEnemySpawner);
@@ -101,7 +101,8 @@ public class spawn : MonoBehaviour
         {
             if ((newSpawn.GetComponent<spawn>().spawned == false) && (spawned == false)) //this will only run true if the two spawnpoints were created on top of each other at the same time
             {
-                Instantiate(RoomOrganiser.wall, transform.position, Quaternion.identity);
+                //Instantiate(RoomOrganiser.wall, transform.position, Quaternion.identity);
+                //spawned = true;
                 spawned = true;
             }
             else

@@ -7,7 +7,7 @@ public class DoorSpawn : MonoBehaviour
 {
     private List<GameObject> doors = new List<GameObject>();
     private bool roomEntered;
-    public bool RoomEntered //Declared as a property so it can only be editted inside this class
+    public bool RoomEntered //Declared as a property so it can only be edited inside this class
     {
         get { return roomEntered; }
         private set { roomEntered = value; }
@@ -18,7 +18,7 @@ public class DoorSpawn : MonoBehaviour
         foreach(Transform child in gameObject.transform)
         {
             doors.Add(child.gameObject);
-            child.gameObject.SetActive(false);
+            child.gameObject.SetActive(false); //deactivates all doors during level generation
         }
     }
 
@@ -28,7 +28,7 @@ public class DoorSpawn : MonoBehaviour
         {
             door.SetActive(false);
         }
-        Destroy(gameObject);
+        Destroy(gameObject); //Destroying unnecessary gameobjects increases performance
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -37,7 +37,7 @@ public class DoorSpawn : MonoBehaviour
         {
             foreach (GameObject door in doors)
             {
-                door.SetActive(true);
+                door.SetActive(true); //Activates the doors when the player enters the room
             }
             roomEntered = true;
         }

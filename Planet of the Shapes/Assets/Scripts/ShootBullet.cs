@@ -22,7 +22,7 @@ public class ShootBullet : MonoBehaviour
     void Update()
     {
         coolDown -= Time.deltaTime;
-        if (Input.GetButton("Fire1") && coolDown <= 0)
+        if (Input.GetButton("Fire1") && coolDown <= 0) //Adds a delay equal to fireRate between shots
         {
             coolDown = fireRate;
             Shoot();
@@ -31,8 +31,8 @@ public class ShootBullet : MonoBehaviour
 
     void Shoot()
     {
-        GameObject currentBullet =Instantiate(bullet, pos.position, pos.rotation);
-        currentBullet.GetComponent<Rigidbody2D>().AddForce(pos.up * bulletPower, ForceMode2D.Impulse);
+        GameObject currentBullet =Instantiate(bullet, pos.position, pos.rotation); //Instantiates a new bullet
+        currentBullet.GetComponent<Rigidbody2D>().AddForce(pos.up * bulletPower, ForceMode2D.Impulse); //applies a forward impulse to that bullet
     }
 
 }

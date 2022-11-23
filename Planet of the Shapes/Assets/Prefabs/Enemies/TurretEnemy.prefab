@@ -751,7 +751,7 @@ MonoBehaviour:
   - {fileID: 6627468939467685291}
   - {fileID: 6627468938486695038}
   fireRate: 1.5
-  enemyBulletForce: 600
+  enemyBulletForce: 12
   enemyBullet: {fileID: 5173548901113104687, guid: dde49088be78f1148bb60899116b6ad6, type: 3}
 --- !u!1 &6627468939411830847
 GameObject:

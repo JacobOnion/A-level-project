@@ -293,5 +293,5 @@ MonoBehaviour:
   guns:
   - {fileID: 2522477453490692094}
   fireRate: 1
-  enemyBulletForce: 750
+  enemyBulletForce: 14
   enemyBullet: {fileID: 5173548901113104687, guid: dde49088be78f1148bb60899116b6ad6, type: 3}

@@ -9,8 +9,7 @@ public class RoomOrganiser : MonoBehaviour
     public GameObject[] rightRooms;
     public GameObject[] downRooms;
     public GameObject[] leftRooms;
-    public List<GameObject> enemySpawnerList = new List<GameObject>();
-    public List<GameObject> spawnAreaList = new List<GameObject>();
+    private List<GameObject[]> roomLists = new List<GameObject[]>();
     public GameObject wall;
     public int oneDoor;
     public int twoDoor;
@@ -22,8 +21,29 @@ public class RoomOrganiser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //calculates where in each list the last room with one, two and three doors is, since they are ordered. Only has to be done once, since each array has the same rooms, just rotated appropriately.
-        //sorting algorithm?
+        roomLists.AddRange(new List<GameObject[]>
+        {
+            upRooms, downRooms, rightRooms, leftRooms
+        });
+
+        foreach (GameObject[] list in roomLists) //Insertion sort used on each array
+        {
+            for (int i = 0; i < list.Length - 1; i++)
+            {
+                for(int j = i + 1; j > 0; j--)
+                {
+                    if (list[j-1].name.Length > list[j].name.Length)
+                    {
+                        GameObject temp = list[j -1];
+                        list[j -1] = list[j];
+                        list[j] = temp;
+                    }
+                }
+            }
+        }
+
+        //calculates where in each list the last room with one, two and three doors is.
+        //Only has to be done once, since each array has the same rooms, just rotated appropriately.
         for (int i = 0; i < upRooms.Length; i++)
         {
             if (upRooms[i].name.Length == 1)
@@ -63,13 +83,5 @@ public class RoomOrganiser : MonoBehaviour
         }
 
         genFinished = true;
-
-
-        /*foreach (GameObject spawner in enemySpawnerList)
-        {
-            spawner.SetActive(true); //re-activates all spawners after the spawnpoints have been deleted
-        }*/
-        spawnList = null;
-        enemySpawnerList = null;
     }
 }

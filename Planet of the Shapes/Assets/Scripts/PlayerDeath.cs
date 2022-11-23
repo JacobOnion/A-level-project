@@ -16,9 +16,9 @@ public class PlayerDeath : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0) //player dies
         {
-            Time.timeScale = 0;
+            Time.timeScale = 0; //pauses all functions in the game
             timer -= Time.unscaledDeltaTime;
             if (timer <= 0f)
             {
@@ -37,7 +37,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.CompareTag("enemy bullet"))
         {
-            health -= other.GetComponent<EnemyDestroyBullet>().damage;
+            health -= other.GetComponent<EnemyDestroyBullet>().damage; //Gets the damage value from the enemy class and minuses that from health
         }
         else if (other.CompareTag("melee enemy") || other.CompareTag("laser enemy"))
         {

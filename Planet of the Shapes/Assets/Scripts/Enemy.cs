@@ -17,12 +17,12 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0f)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //kills the enemy
         }
     }
 
     public void damage(float weaponDmg)
     {
-        health -= weaponDmg;
+        health -= weaponDmg; //damages the enemy by the value of weaponDmg
     }
 }

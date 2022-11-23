@@ -30,7 +30,7 @@ public class ChasingEnemy : Enemy
         Die();
     }
 
-    private void Spawner()
+    private void Spawner() //explain in doc
     {
         if (health <= 0 && size == 3)
         {
@@ -51,21 +51,21 @@ public class ChasingEnemy : Enemy
 
     private void Chase()
     {
-        float moveDir = Vector2.Angle(new Vector2(0f, 1f), rb.velocity);
+        float moveDir = Vector2.Angle(new Vector2(0f, 1f), rb.velocity); //gets the angle the enemy is moving at
         if (rb.velocity.x > 0)
         {
             moveDir *= -1;
             moveDir += 360; //turns the angle into a bearing
         }
         
-        if (rb.velocity.magnitude <= maxSpeed)
+        if (rb.velocity.magnitude <= maxSpeed) //only move the enemy if it is below its max speed
         {
-            if (Mathf.Abs(moveDir - gameObject.GetComponent<AimingEnemy3>().angle) > 100f && (Mathf.Abs(rb.velocity.x) > 0.1f || Mathf.Abs(rb.velocity.y) > 0.1f))
+            if (Mathf.Abs(moveDir - gameObject.GetComponent<AimingEnemy3>().angle) > 100f && (Mathf.Abs(rb.velocity.x) > 0.1f || Mathf.Abs(rb.velocity.y) > 0.1f)) //explain in doc
             {
                 rb.AddForce(rb.velocity.normalized * -1 * deccelRate, ForceMode2D.Force);
             }
             
-            rb.AddForce(gameObject.GetComponent<AimingEnemy3>().lateRot.Peek().normalized * accelRate, ForceMode2D.Force);
+            rb.AddForce(gameObject.GetComponent<AimingEnemy3>().lateRot.Peek().normalized * accelRate, ForceMode2D.Force); //pushes the enemy in the direction it is looking
             
         }
     }
@@ -76,7 +76,7 @@ public class ChasingEnemy : Enemy
         {
             Vector2 knockbackDirection = gameObject.GetComponent<AimingEnemy3>().lookDirection * new Vector2(-1f, -1f);
             Debug.Log(knockbackDirection);
-            rb.AddForce(knockbackDirection * knockbackStrength, ForceMode2D.Impulse);
+            rb.AddForce(knockbackDirection * knockbackStrength, ForceMode2D.Impulse); //knocks the enemy back on collision with player
         }
     }
 }
