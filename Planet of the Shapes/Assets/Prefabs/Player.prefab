@@ -158,8 +158,8 @@ GameObject:
   - component: {fileID: 5878254204205663973}
   - component: {fileID: 5878254204205663972}
   - component: {fileID: 5878254204205663975}
-  - component: {fileID: 5878254204205663970}
   - component: {fileID: 3150273988881540582}
+  - component: {fileID: 5878254204205663970}
   - component: {fileID: 1585758392}
   m_Layer: 0
   m_Name: Player
@@ -257,22 +257,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &5878254204205663970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5878254204205663995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77a97537e3e82064d86ab43c8b80c7f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input: {x: 0, y: 0}
-  maxSpeed: 7.5
-  accelRate: 15
-  deccelRate: 7.5
 --- !u!58 &3150273988881540582
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -289,6 +273,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5878254204205663970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878254204205663995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a97537e3e82064d86ab43c8b80c7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {x: 0, y: 0}
+  maxSpeed: 7.5
+  accelRate: 15
+  deccelRate: 7.5
 --- !u!114 &1585758392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,3 +302,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  timer: 0

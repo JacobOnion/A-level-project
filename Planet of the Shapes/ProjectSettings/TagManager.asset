@@ -15,14 +15,15 @@ TagManager:
   - enemy spawner
   - enemy spawn area
   - laser enemy
+  - player bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Player Bullets
   - Enemies
   - Enemy Bullets
   - 
@@ -51,4 +52,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player Gun
+    uniqueID: 2628125447
     locked: 0

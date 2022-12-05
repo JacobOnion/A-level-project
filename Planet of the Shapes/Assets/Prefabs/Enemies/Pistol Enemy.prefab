@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accuracy: 10
   angle: 0
+  aiming: 1
   lookDirection: {x: 0, y: 0}
 --- !u!114 &2590338415370855000
 MonoBehaviour:

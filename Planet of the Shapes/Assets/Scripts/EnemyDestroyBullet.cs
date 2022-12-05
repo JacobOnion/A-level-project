@@ -12,7 +12,10 @@ public class EnemyDestroyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Destroy(gameObject); //Destroys bullet on collsion
+        if (other.gameObject.tag != "player bullet")
+        {
+            Destroy(gameObject); //Destroys bullet on collision
+        }
     }
 
     void BulletTimer()
