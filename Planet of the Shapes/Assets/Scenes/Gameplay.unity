@@ -514,6 +514,10 @@ PrefabInstance:
       propertyPath: health
       value: 160
       objectReference: {fileID: 0}
+    - target: {fileID: 3150273990571835359, guid: 5e0afe71f8931ad4685b79947f0cea88, type: 3}
+      propertyPath: offset
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5878254204205663973, guid: 5e0afe71f8931ad4685b79947f0cea88, type: 3}
       propertyPath: m_RootOrder
       value: 2
