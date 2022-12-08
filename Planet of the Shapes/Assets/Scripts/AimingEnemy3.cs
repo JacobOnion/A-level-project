@@ -6,6 +6,7 @@ public class AimingEnemy3 : MonoBehaviour
 {
     public float accuracy;
     public float angle;
+    public bool aiming = true;
     public Vector2 lookDirection;
     public Queue<Vector2> lateRot = new Queue<Vector2>(); //Used to add a delay to the enemy aiming
     private Rigidbody2D player;
@@ -26,7 +27,10 @@ public class AimingEnemy3 : MonoBehaviour
 
     private void FixedUpdate() //Done in FixedUpdate because physics-based operations are used
     {
-        Rotator();
+        if (aiming == true)
+        {
+            Rotator();
+        }
 
     }
 

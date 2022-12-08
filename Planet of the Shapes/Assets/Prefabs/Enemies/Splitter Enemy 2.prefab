@@ -174,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accuracy: 5
   angle: 0
+  aiming: 1
   lookDirection: {x: 0, y: 0}
 --- !u!256 &1551409125601289627
 FrictionJoint2D:

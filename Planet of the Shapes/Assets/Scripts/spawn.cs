@@ -72,7 +72,7 @@ public class spawn : MonoBehaviour
                 Instantiate(victory, transform.position, Quaternion.identity);
             }
             spawned = true;
-            //LayoutSpawner();
+            LayoutSpawner();
         }
     }
 
