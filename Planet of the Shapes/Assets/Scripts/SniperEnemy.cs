@@ -6,9 +6,11 @@ public class SniperEnemy : TurretEnemy
 {
     private LineRenderer laser;
     private GameObject gun;
-    private Rigidbody2D rb;
     public GameObject bulletTrail;
     private AimingEnemy3 rotate;
+    private Transform pos;
+    private bool scope;
+    private PlayerDeath playerDeath;
     public SniperEnemy(float newHealth, float newEnemyDamage, float newFireRate, GameObject[] newGuns) : base(newHealth, newEnemyDamage, newFireRate, newGuns)
     {
 
@@ -16,21 +18,27 @@ public class SniperEnemy : TurretEnemy
 
     void Start()
     {
-        coolDown = 1f;
-
+        playerDeath = GameObject.FindGameObjectWithTag("player").GetComponent<PlayerDeath>();
+        coolDown = 1.5f;
         gun = guns[0];
         laser = gun.transform.Find("Laser").gameObject.GetComponent<LineRenderer>();
-        rb = gameObject.GetComponent<Rigidbody2D>();
         rotate = GetComponent<AimingEnemy3>();
-        
+        pos = gun.GetComponent<Transform>();
+        scope = true;
     }
 
+    private void Update()
+    {
+        Die();
+    }
 
     void FixedUpdate()
     {
         CoolDownTimer("FreezeLaser");
-        SetLaserPos(); 
-        
+        if (scope)
+        {
+            SetLaserPos();
+        } 
     }
     void SetLaserPos()
     {
@@ -43,20 +51,31 @@ public class SniperEnemy : TurretEnemy
         }
     }
 
-    /*void FreezeLaser()
+    void FreezeLaser()
     {
-        Invoke("ShootGun", 0.4f);
+        Invoke("ShootGun", 0.35f);
+        laser.SetPosition(1, pos.position);
         rotate.aiming = false;
-        Debug.Log("boom?");
+        scope = false;
     }
 
     void ShootGun()
     {
-        Debug.Log("BOOM");
         RaycastHit2D shot = Physics2D.Raycast(gun.transform.position, gun.transform.up, Mathf.Infinity, ~LayerMask.GetMask("spawns"));
-        GameObject trail = Instantiate(bulletTrail);
+
+        if (shot.transform.gameObject.CompareTag("player"))
+        {
+            playerDeath.DamagePlayer(gameObject);
+        }
+
+        GameObject trail = Instantiate(bulletTrail, pos.position, pos.rotation);
         trail.GetComponent<BulletTrail>().endPos = shot.point;
         rotate.aiming = true;
-    }*/
+        Invoke("CoolDown", 1f);
+    }
 
+    void CoolDown()
+    {
+        scope = true;
+    }
 }

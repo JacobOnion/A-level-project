@@ -19,10 +19,7 @@ public class DestroyBullet : MonoBehaviour
         {
             other.gameObject.GetComponent<Enemy>().damage(shootBullet.bulletDmg); //subtracts bulletDmg from the enemy's health
         }
-        if (other.gameObject.tag != "enemy bullet")
-        {
-            Destroy(gameObject);
-        }
+        
         Destroy(gameObject); //Bullet is destroyed on collision
     }
 

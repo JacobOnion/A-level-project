@@ -19,12 +19,8 @@ public class TurretEnemy : Enemy
         coolDown = fireRate;
     }
 
-    void Update()
-    {
 
-    }
-
-    protected void CoolDownTimer(string shoot) //adds a delay in between shots eqal to fireRate
+    protected void CoolDownTimer(string shoot) //adds a delay in between shots equal to fireRate
     {
         coolDown -= Time.deltaTime;
         if (coolDown <= 0f)
