@@ -36,6 +36,10 @@ public class LaserEnemy : TurretEnemy
             lineRenderer.enabled = false; //deactivates all the line renderers when the enemy spawns in
         }
     }
+    void OnDestroy()
+    {
+        volume.enabled = false; //If the enemy is dead, the glow effect should turn off as well
+    }
 
     void Update()
     {

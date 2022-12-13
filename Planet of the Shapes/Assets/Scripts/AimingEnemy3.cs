@@ -21,7 +21,6 @@ public class AimingEnemy3 : MonoBehaviour
     private void Start()
     {
         lookDirection = player.position - self.position; //Prevents null errors when other scripts reference lookDirection on creation
-
         lateRot.Enqueue(lookDirection);
     }
 
@@ -46,7 +45,6 @@ public class AimingEnemy3 : MonoBehaviour
             {
                 angle *= -1;
                 angle += 360; //turns the angle into a bearing
-
             }
             self.rotation = angle;
             lateRot.Dequeue();

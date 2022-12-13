@@ -22,7 +22,7 @@ public class BulletEnemy : TurretEnemy
     {
         Die();
     }
-
+    
     private void FixedUpdate()
     {
         CoolDownTimer("BulletShoot");

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5878254203597809542}
   - component: {fileID: 5878254203597809537}
   - component: {fileID: 3150273990571835359}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5878254204121392388}
   - component: {fileID: 5878254204121392389}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire Point
   m_TagString: gun
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 3150273988881540582}
   - component: {fileID: 5878254204205663970}
   - component: {fileID: 1585758392}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: player
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 0.2520915, g: 0.49128968, b: 0.9716981, a: 1}
   m_FlipX: 0
@@ -301,5 +301,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a09f15181b4eab4193b00c3e2aec266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  timer: 0
+  health: 200
+  timer: 1.5
