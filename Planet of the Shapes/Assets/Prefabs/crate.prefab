@@ -150,5 +150,5 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 3.8, y: 0.5}
-  m_MaxForce: 80
-  m_MaxTorque: 60
+  m_MaxForce: 55
+  m_MaxTorque: 40
