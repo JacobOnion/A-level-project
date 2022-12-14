@@ -30,7 +30,7 @@ public class ChasingEnemy : Enemy
         Die();
     }
 
-    private void Spawner() //explain in doc
+    private void Spawner()
     {
         if (health <= 0 && size == 3)
         {
@@ -75,7 +75,6 @@ public class ChasingEnemy : Enemy
         if (other.gameObject.CompareTag("player"))
         {
             Vector2 knockbackDirection = gameObject.GetComponent<AimingEnemy3>().lookDirection * new Vector2(-1f, -1f);
-            Debug.Log(knockbackDirection);
             rb.AddForce(knockbackDirection * knockbackStrength, ForceMode2D.Impulse); //knocks the enemy back on collision with player
         }
     }

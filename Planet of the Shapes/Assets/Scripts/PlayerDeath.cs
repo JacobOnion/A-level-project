@@ -8,10 +8,16 @@ public class PlayerDeath : MonoBehaviour
     private Rigidbody2D rb;
     public float health;
     public float timer;
-    // Start is called before the first frame update
+    private RectTransform healthBar;
+    private Rect ok;
+    private float maxWidth;
+    private float maxHealth;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        healthBar = GameObject.FindGameObjectWithTag("health bar").GetComponent<RectTransform>();
+        maxWidth = healthBar.rect.width;
+        maxHealth = health;
     }
 
     void Update()
@@ -43,5 +49,9 @@ public class PlayerDeath : MonoBehaviour
         {
             health -= other.GetComponent<Enemy>().enemyDamage;
         }
+
+        //healthBar.sizeDelta = new Vector2((maxWidth * (health / maxHealth)), healthBar.sizeDelta.y);
+        healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, (maxWidth * (health / maxHealth)));
+        
     }
 }

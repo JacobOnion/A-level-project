@@ -16,6 +16,7 @@ TagManager:
   - enemy spawn area
   - laser enemy
   - player bullet
+  - health bar
   layers:
   - Default
   - TransparentFX
