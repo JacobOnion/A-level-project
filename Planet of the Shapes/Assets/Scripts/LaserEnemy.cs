@@ -38,7 +38,7 @@ public class LaserEnemy : TurretEnemy
     }
     void OnDestroy()
     {
-        volume.enabled = false; //If the enemy is dead, the glow effect should turn off as well
+        laserEffect.enabled = false; //If the enemy is dead, the glow effect should turn off as well
     }
 
     void Update()
@@ -71,16 +71,16 @@ public class LaserEnemy : TurretEnemy
         }
     }
 
-    protected void EnableLaser()
-    {
-        laserEffect.enabled = true;
-        Invoke("DisableLaser", 2.2f); //sets the duration of the laser
-    }
-
     protected void DrawRay(Vector2 startPos, Vector2 endPos, int num)
     {
         lineRenderers[num].SetPosition(0, startPos); //always set the start of the laser to the fire point's position
         lineRenderers[num].SetPosition(1, endPos);
+    }
+
+    protected void EnableLaser()
+    {
+        laserEffect.enabled = true;
+        Invoke("DisableLaser", 2.2f); //sets the duration of the laser
     }
 
     protected void DisableLaser()

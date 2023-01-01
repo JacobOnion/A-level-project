@@ -15,7 +15,7 @@ public class RoomOrganiser : MonoBehaviour
     public int twoDoor;
     public int threeDoor;
     public int roomsNum;
-    public int maxRooms;
+    public static int maxRooms = 4;
     public bool genFinished;
 
     // Start is called before the first frame update

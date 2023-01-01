@@ -66,22 +66,29 @@ public class spawn : MonoBehaviour
             }
             currentRoom = Instantiate(room, transform.position, Quaternion.identity);
             RoomOrganiser.roomsNum += 1;
+            spawned = true;
             if (RoomOrganiser.roomsNum == RoomOrganiser.maxRooms) //runs true if this is the final room generated
             {
                 Debug.Log("done", currentRoom);
                 Instantiate(victory, transform.position, Quaternion.identity);
+                LayoutSpawner(true);
             }
-            spawned = true;
-            LayoutSpawner();
+            else
+            {
+                LayoutSpawner(false);
+            }
         }
     }
 
-    private void LayoutSpawner()
+    private void LayoutSpawner(bool finale)
     {
         GameObject newLayout = Instantiate(LayoutManager.layouts[Random.Range(0, LayoutManager.layouts.Length)], transform.position, Quaternion.identity); //spawns a random layout from the array
-        GameObject currentEnemySpawner = newLayout.transform.Find("Enemy Spawner").gameObject;
-        currentEnemySpawner.GetComponent<EnemySpawner>().doorSpawn = currentRoom.transform.Find("Enemy Spawn Area").gameObject.GetComponent<DoorSpawn>();//used to find the room the layout is in.
-        //RoomOrganiser.enemySpawnerList.Add(currentEnemySpawner);
+        EnemySpawner currentEnemySpawner = newLayout.transform.Find("Enemy Spawner").gameObject.GetComponent<EnemySpawner>();
+        currentEnemySpawner.doorSpawn = currentRoom.transform.Find("Enemy Spawn Area").gameObject.GetComponent<DoorSpawn>();//used to find the room the layout is in.
+        if (finale == true)
+        {
+            currentEnemySpawner.finalRoom = true;
+        }
     }
 
     // if two spawnpoints collide,

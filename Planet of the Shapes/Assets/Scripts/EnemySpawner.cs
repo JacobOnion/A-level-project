@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,17 +12,23 @@ public class EnemySpawner : MonoBehaviour
     public DoorSpawn doorSpawn;
     public GameObject currentWave;
     private int wavesCompleted;
-    private bool disabled;
+    public bool finalRoom;
+    private static int score;
+    private TextMeshProUGUI scoreUI;
 
-    /*private void Awake()
+    private void Awake()
     {
-        if (disabled == false)
-        {
-            gameObject.SetActive(false); //disables this script during level generation to prevent null reference exception errors
-        }
-    }*/
+        
+    }
+
     void Start()
     {
+        if (finalRoom == true)
+        {
+            scoreUI = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
+            scoreUI.text = ("Score: " + score);
+        }
+
         bool sorted = false; //Sorts the array of waves to ensure they are spawned in the correct order
         GameObject temp;
         while (sorted == false)
@@ -38,10 +47,6 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    /*void OnDisable()
-    {
-        disabled = true;
-    }*/
 
     void Update()
     {
@@ -49,11 +54,17 @@ public class EnemySpawner : MonoBehaviour
         {
             if (doorSpawn.RoomEntered) //no enemies will spawn unless the player enters the room
             {
-                if (wavesCompleted == waves.Length)
+                if (wavesCompleted == waves.Length && currentWave.transform.childCount == 0)
                 {
-                    if (currentWave.transform.childCount == 0) //checks if all enemies are dead
+                    doorSpawn.RoomComplete();
+                    if (finalRoom == true)
                     {
-                        doorSpawn.RoomComplete();
+                        score += 1;
+                        RoomOrganiser.maxRooms += 2;
+                        Invoke("newLevel", 1f);
+                    }
+                    else
+                    {
                         Destroy(gameObject);
                     }
                 }
@@ -64,6 +75,11 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void newLevel()
+    {
+        SceneManager.LoadScene("Gameplay");
     }
 
 }

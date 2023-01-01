@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
-    private Rigidbody2D rb;
     public float health;
     public float timer;
     private RectTransform healthBar;
-    private Rect ok;
     private float maxWidth;
     private float maxHealth;
+    public Canvas deathScreen;
+    private RoomOrganiser roomOrganiser;
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
         healthBar = GameObject.FindGameObjectWithTag("health bar").GetComponent<RectTransform>();
         maxWidth = healthBar.rect.width;
         maxHealth = health;
@@ -25,12 +24,9 @@ public class PlayerDeath : MonoBehaviour
         if (health <= 0) //player dies
         {
             Time.timeScale = 0; //pauses all functions in the game
-            timer -= Time.unscaledDeltaTime;
-            if (timer <= 0f)
-            {
-                Time.timeScale = 1;
-                SceneManager.LoadScene("Main Menu");
-            }
+            deathScreen.enabled = true;
+            RoomOrganiser.maxRooms = 4;
+            Destroy(gameObject);
         }
     }
 
@@ -43,15 +39,12 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.CompareTag("enemy bullet"))
         {
-            health -= other.GetComponent<EnemyDestroyBullet>().damage; //Gets the damage value from the enemy class and minuses that from health
+            health -= other.GetComponent<EnemyDestroyBullet>().damage; //Gets the damage value from the enemy class and subtracts that from health
         }
         else if (other.CompareTag("melee enemy") || other.CompareTag("laser enemy"))
         {
             health -= other.GetComponent<Enemy>().enemyDamage;
         }
-
-        //healthBar.sizeDelta = new Vector2((maxWidth * (health / maxHealth)), healthBar.sizeDelta.y);
         healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, (maxWidth * (health / maxHealth)));
-        
     }
 }

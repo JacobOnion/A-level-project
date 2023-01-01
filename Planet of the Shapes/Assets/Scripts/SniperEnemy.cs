@@ -20,11 +20,11 @@ public class SniperEnemy : TurretEnemy
     {
         playerDeath = GameObject.FindGameObjectWithTag("player").GetComponent<PlayerDeath>();
         coolDown = 1.5f;
-        gun = guns[0];
+        gun = guns[0]; // only one gun in the list for this enemy
         laser = gun.transform.Find("Laser").gameObject.GetComponent<LineRenderer>();
         rotate = GetComponent<AimingEnemy3>();
         pos = gun.GetComponent<Transform>();
-        scope = true;
+        scope = true; //Used to check if the enemy is currently aiming
     }
 
     private void Update()
@@ -34,15 +34,15 @@ public class SniperEnemy : TurretEnemy
 
     void FixedUpdate()
     {
-        CoolDownTimer("FreezeLaser");
+        CoolDownTimer("FreezeLaser"); //controls how long the aiming phase lasts
+
         if (scope)
         {
             SetLaserPos();
         } 
     }
-    void SetLaserPos()
+    void SetLaserPos() //draws the aiming laser
     {
-        Debug.Log("ok");
         laser.SetPosition(0, gun.transform.position);
         if (Physics2D.Raycast(gun.transform.position, gun.transform.up))
         {
@@ -54,7 +54,7 @@ public class SniperEnemy : TurretEnemy
     void FreezeLaser()
     {
         Invoke("ShootGun", 0.35f);
-        laser.SetPosition(1, pos.position);
+        laser.SetPosition(1, pos.position); //end point of laser is now equal to start point, effectively deleting it
         rotate.aiming = false;
         scope = false;
     }
@@ -69,7 +69,7 @@ public class SniperEnemy : TurretEnemy
         }
 
         GameObject trail = Instantiate(bulletTrail, pos.position, pos.rotation);
-        trail.GetComponent<BulletTrail>().endPos = shot.point;
+        trail.GetComponent<BulletTrail>().endPos = shot.point; //passes end goal of trail into it.
         rotate.aiming = true;
         Invoke("CoolDown", 1f);
     }
