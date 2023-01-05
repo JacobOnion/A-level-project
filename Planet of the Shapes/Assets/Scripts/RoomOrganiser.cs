@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class RoomOrganiser : MonoBehaviour
 {
@@ -17,10 +18,14 @@ public class RoomOrganiser : MonoBehaviour
     public int roomsNum;
     public static int maxRooms = 4;
     public bool genFinished;
+    private TextMeshProUGUI scoreUI;
 
     // Start is called before the first frame update
     void Start()
     {
+        scoreUI = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
+        scoreUI.text = ("Score: " + EnemySpawner.score);
+
         roomLists.AddRange(new List<GameObject[]>
         {
             upRooms, downRooms, rightRooms, leftRooms

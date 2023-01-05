@@ -23,10 +23,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if (health <= 0) //player dies
         {
-            Time.timeScale = 0; //pauses all functions in the game
-            deathScreen.enabled = true;
-            RoomOrganiser.maxRooms = 4;
-            Destroy(gameObject);
+            Death();
         }
     }
 
@@ -46,5 +43,18 @@ public class PlayerDeath : MonoBehaviour
             health -= other.GetComponent<Enemy>().enemyDamage;
         }
         healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, (maxWidth * (health / maxHealth)));
+    }
+
+    private void Death()
+    {
+        Time.timeScale = 0; //pauses all functions in the game
+        deathScreen.enabled = true;
+        if (EnemySpawner.score > PlayerPrefs.GetInt("HighScore") || PlayerPrefs.HasKey("HighScore") == false)
+        {
+            PlayerPrefs.SetInt("HighScore", EnemySpawner.score);
+        }
+        EnemySpawner.score = 0;
+        RoomOrganiser.maxRooms = 4;
+        Destroy(gameObject);
     }
 }

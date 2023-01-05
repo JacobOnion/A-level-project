@@ -13,22 +13,10 @@ public class EnemySpawner : MonoBehaviour
     public GameObject currentWave;
     private int wavesCompleted;
     public bool finalRoom;
-    private static int score;
-    private TextMeshProUGUI scoreUI;
-
-    private void Awake()
-    {
-        
-    }
+    public static int score;
 
     void Start()
     {
-        if (finalRoom == true)
-        {
-            scoreUI = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
-            scoreUI.text = ("Score: " + score);
-        }
-
         bool sorted = false; //Sorts the array of waves to ensure they are spawned in the correct order
         GameObject temp;
         while (sorted == false)

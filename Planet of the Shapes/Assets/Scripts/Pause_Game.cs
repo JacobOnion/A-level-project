@@ -7,12 +7,6 @@ using UnityEngine.SceneManagement;
 public class Pause_Game : MonoBehaviour
 {
     public Canvas menu;
-    private float gameSpeed;
-
-    void Start()
-    {
-        gameSpeed = GameObject.Find("Game Manager").GetComponent<Easy_Mode>().speed;
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,11 +21,13 @@ public class Pause_Game : MonoBehaviour
     public void Resume()
     {
         menu.enabled=false;
-        Time.timeScale = gameSpeed;
+        Time.timeScale = 1;
     }
 
     public void Quit()
     {
+        EnemySpawner.score = 0;
+        RoomOrganiser.maxRooms = 4;
         SceneManager.LoadScene("Main Menu");
     }
 }

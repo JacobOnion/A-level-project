@@ -25,7 +25,7 @@ public class spawn : MonoBehaviour
         RoomOrganiser = GameObject.Find("Room Manager").GetComponent<RoomOrganiser>();
         LayoutManager = GameObject.Find("Room Manager").GetComponent<LayoutManager>();
 
-        Invoke("RoomSpawner", 0.2f); //calls the function after 0.2 seconds to give time to destroy the spawnpoint before it runs if necessary.
+        Invoke("RoomSpawner", 0.1f); //calls the function after 0.2 seconds to give time to destroy the spawnpoint before it runs if necessary.
         
     }
     void RoomSpawner()
@@ -69,7 +69,6 @@ public class spawn : MonoBehaviour
             spawned = true;
             if (RoomOrganiser.roomsNum == RoomOrganiser.maxRooms) //runs true if this is the final room generated
             {
-                Debug.Log("done", currentRoom);
                 Instantiate(victory, transform.position, Quaternion.identity);
                 LayoutSpawner(true);
             }
@@ -97,8 +96,12 @@ public class spawn : MonoBehaviour
         if (other.CompareTag("spawn") && gameObject.CompareTag("spawn")) //we only want the function to run if the two gameobjects are both spawnpoints
         {
             newSpawn = other.gameObject;
-            Invoke("blockCheck", 0.1f); // called after 0.1 seconds to allow other scripts to run before the rest of the code is excecuted
+            Invoke("blockCheck", 0.05f); // called after 0.1 seconds to allow other scripts to run before the rest of the code is excecuted
             
+        }
+        else if (other.CompareTag("destroyer"))
+        {
+            Destroy(gameObject);
         }
     }
 
