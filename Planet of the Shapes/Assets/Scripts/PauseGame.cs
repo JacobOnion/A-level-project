@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
-public class Pause_Game : MonoBehaviour
+public class PauseGame : MonoBehaviour
 {
     public Canvas menu;
 

@@ -71,10 +71,10 @@ public class RoomOrganiser : MonoBehaviour
     void cleaner()
     {
         Debug.Log(roomsNum);
-        if (roomsNum < maxRooms) //remakes the level if certain parameters aren't met
+        /*if (roomsNum < maxRooms) //remakes the level if certain parameters aren't met
         {
             SceneManager.LoadScene("Gameplay");
-        }
+        }*/
 
         GameObject[] spawnList = GameObject.FindGameObjectsWithTag("spawn");
 
